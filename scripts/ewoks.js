@@ -15,11 +15,11 @@ export let options = {
 };
 
 export default function () {
-  let response = http.get("https://gateway.vantashala.com/services/publisher/api/_search/items?query=%20&sort=id,asc&page=0&size=8&lat=17.4601442&lng=78.4751349");
-      // let res = http.get('https://gateway.vantashala.com/services/publisher/api/publisher/findByStatus?status=APPROVED');
-  check(response, { "status is 200": (r) => r.status === 200 });
-  sleep(.300);
+  // let response = http.get("https://gateway.vantashala.com/services/publisher/api/_search/items?query=%20&sort=id,asc&page=0&size=8&lat=17.4601442&lng=78.4751349");
   // let res = http.get('https://gateway.vantashala.com/services/publisher/api/publisher/findByStatus?status=APPROVED');
-  // check(res, { "status is 200": (r) => r.status === 200 });
+  // check(response, { "status is 200": (r) => r.status === 200 });
   // sleep(.300);
+  let res = http.get('https://gateway.vantashala.com/services/publisher/api/publisher/findByStatus?status=APPROVED');
+  check(res, { "status is 200": (r) => r.status === 200 });
+  sleep(.300);
 };
